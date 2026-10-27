@@ -1,6 +1,6 @@
 ---
 name: adwave
-description: Plans, launches and manages paid ad campaigns for a business with Adwave. Adwave makes the ads from the business's website and runs them on Meta (Facebook and Instagram), Google Search, YouTube, Reddit, TikTok, Pinterest, streaming TV and the open web from one prepaid daily budget, for businesses in the US and Canada. Use when the user wants to advertise or market a business, run ads or an ad campaign, choose an ad budget or channels, check how their ads are performing, or set up conversion tracking.
+description: Plans, launches and manages paid ad campaigns for a business with Adwave. Adwave makes the ads from the business's website and runs them on streaming TV, Meta (Facebook and Instagram), Google Search, YouTube, Reddit and the open web from one prepaid daily budget, for businesses in the US and Canada. Use when the user wants to advertise or market a business, run ads or an ad campaign, choose an ad budget or channels, check how their ads are performing, or set up conversion tracking.
 license: MIT
 compatibility: Needs network access and either the Adwave MCP server (https://waverunner.adwave.com/api/mcp, sign in with OAuth) or an Adwave API key.
 ---

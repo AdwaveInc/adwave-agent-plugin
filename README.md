@@ -1,10 +1,10 @@
 # Adwave for AI assistants
 
 Run paid advertising for a business from the AI assistant you already use. Adwave
-makes the ads from the business's website and runs them on Meta (Facebook and
-Instagram), Google Search, YouTube, Reddit, TikTok, Pinterest, streaming TV and the
-open web from one prepaid daily budget, then reports spend, visits, conversions and
-return on ad spend. Campaigns run in the US and Canada.
+makes the ads from the business's website and runs them on streaming TV, Meta
+(Facebook and Instagram), Google Search, YouTube, Reddit and the open web from one
+prepaid daily budget, then reports spend, visits, conversions and return on ad
+spend. Campaigns run in the US and Canada.
 
 This repository is the Adwave plugin for Claude, Claude Code, ChatGPT and Codex,
 Cursor, Grok, VS Code and GitHub Copilot, Gemini, Kiro, OpenClaw and Hermes. It

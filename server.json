@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.AdwaveInc/adwave",
   "title": "Adwave",
-  "description": "Make ads from a website and run them on Meta, Google, Reddit, TikTok and streaming TV.",
+  "description": "Make ads from a website and run them on streaming TV, Meta, Google, YouTube and Reddit.",
   "version": "1.1.0",
   "websiteUrl": "https://adwave.com",
   "repository": {

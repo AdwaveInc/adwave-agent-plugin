@@ -1,7 +1,7 @@
 {
   "name": "adwave",
   "version": "1.1.0",
-  "description": "Make ads from a website and run them on Meta, Google, YouTube, Reddit, TikTok, Pinterest and streaming TV from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
+  "description": "Make ads from a website and run them on streaming TV, Meta, Google Search, YouTube and Reddit from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
   "author": {
     "name": "Adwave",
     "email": "support@adwave.com",
@@ -17,7 +17,6 @@
     "ad-campaigns",
     "facebook-ads",
     "google-ads",
-    "tiktok-ads",
     "reddit-ads",
     "ctv",
     "small-business",
