@@ -1,0 +1,28 @@
+name: Publish to the MCP Registry
+
+# Publishes server.json as io.github.AdwaveInc/adwave. GitHub OIDC proves the
+# namespace, so no key or person is needed. Bump "version" in every manifest
+# (scripts/validate.mjs checks they agree) before cutting a release.
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/validate.mjs
+      - name: Install mcp-publisher
+        run: curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/v1.8.6/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+      - run: ./mcp-publisher validate server.json
+      - run: ./mcp-publisher login github-oidc
+      - run: ./mcp-publisher publish

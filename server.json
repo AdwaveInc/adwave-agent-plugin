@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.AdwaveInc/adwave",
+  "title": "Adwave",
+  "description": "Make ads from a website and run them on Meta, Google, Reddit, TikTok and streaming TV.",
+  "version": "1.1.0",
+  "websiteUrl": "https://adwave.com",
+  "repository": {
+    "url": "https://github.com/AdwaveInc/adwave-agent-plugin",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/AdwaveInc/adwave-agent-plugin/main/assets/logo.png",
+      "mimeType": "image/png",
+      "sizes": [
+        "512x512"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://waverunner.adwave.com/api/mcp"
+    }
+  ]
+}

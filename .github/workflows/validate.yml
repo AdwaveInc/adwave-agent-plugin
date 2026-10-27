@@ -1,0 +1,32 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: astral-sh/setup-uv@v6
+      - name: Manifests agree with each other
+        run: node scripts/validate.mjs
+      - name: Agent Plugins 1.0 schemas
+        run: |
+          for s in plugin mcp; do
+            curl -fsSL "https://agent-plugins.org/schemas/1.0.0/$s.schema.json" -o "/tmp/$s.schema.json"
+            npx -y -p ajv-cli@5 -p ajv-formats@3 ajv validate --spec=draft2020 -c ajv-formats -s "/tmp/$s.schema.json" -d "$s.json"
+          done
+      - name: Agent Skills spec
+        run: uvx --from skills-ref agentskills validate skills/adwave
+      - name: MCP Registry server.json
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/v1.8.6/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher validate server.json

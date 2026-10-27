@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "adwave": {
+      "type": "http",
+      "url": "https://waverunner.adwave.com/api/mcp"
+    }
+  }
+}
