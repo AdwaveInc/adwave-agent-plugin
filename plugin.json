@@ -30,7 +30,7 @@
         "displayName": "Adwave",
         "shortDescription": "Run ads across channels",
         "longDescription": "Adwave turns a business website into a running ad campaign. It builds the business profile and buyer profiles, makes the ads, and buys media on streaming TV, Meta (Facebook and Instagram), Google Search, YouTube, Reddit and the open web from one prepaid daily budget, then reports spend, visits, conversions and return on ad spend. Use it to launch a campaign, change budgets and channels, pause or resume ads, check results, and install conversion tracking. Campaigns run in the US and Canada. Sign in with your Adwave account; every call that spends from your wallet asks you first.",
-        "developerName": "Adwave Digital Inc.",
+        "developerName": "Adwave Digital Inc",
         "category": "Business & Operations",
         "capabilities": [
           "Read",

@@ -111,4 +111,4 @@ Check every manifest with `node scripts/validate.mjs`.
 - Terms: https://waverunner.adwave.com/terms
 - Security reports: security@adwave.com
 
-MIT licensed. © Adwave Digital Inc.
+MIT licensed. © Adwave Digital Inc
