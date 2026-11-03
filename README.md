@@ -21,7 +21,7 @@ and how to use it.
 
 ## Install
 
-**Claude (web, desktop, mobile).** Settings, Connectors, Add custom connector, URL
+**Claude (web, desktop, mobile).** Customize, Connectors, Add custom connector, URL
 `https://waverunner.adwave.com/api/mcp`. Or open
 [this prefilled link](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Adwave&connectorUrl=https%3A%2F%2Fwaverunner.adwave.com%2Fapi%2Fmcp).
 
