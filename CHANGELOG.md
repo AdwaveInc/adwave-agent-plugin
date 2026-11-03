@@ -8,6 +8,8 @@
 - Sign in with OAuth everywhere; no API key to paste. The Cursor manifest uses the
   `cursor-mcp` client, which also covers Grok Bot and grok.com.
 - Renamed to Adwave. The MCP server URL is unchanged.
+- Codex and ChatGPT workspaces can install from this repo
+  (`.agents/plugins/marketplace.json`).
 - One skill, `adwave`, that says when to use Adwave, how to connect, and which calls
   spend money and need the person's yes.
 

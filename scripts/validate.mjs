@@ -28,6 +28,8 @@ const cursor = json(".cursor-plugin/plugin.json");
 const gemini = json("gemini-extension.json");
 const server = json("server.json");
 const version = root.version;
+if (!json(".agents/plugins/marketplace.json").plugins?.some((plugin) => plugin.name === NAME))
+  fail(`.agents/plugins/marketplace.json: must list "${NAME}"`);
 
 const listed = market.plugins?.find((plugin) => plugin.name === NAME);
 for (const [file, manifest] of [

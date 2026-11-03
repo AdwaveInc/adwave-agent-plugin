@@ -35,13 +35,15 @@ and how to use it.
 Or just the server: `claude mcp add --transport http adwave https://waverunner.adwave.com/api/mcp`
 
 **ChatGPT.** Settings, Apps (or Plugins), Add custom MCP server, URL
-`https://waverunner.adwave.com/api/mcp`, authentication OAuth.
+`https://waverunner.adwave.com/api/mcp`, authentication OAuth. ChatGPT lets
+custom servers launch and change campaigns on Business and Enterprise workspaces.
+On other plans it may only read your account.
 
 **Codex.** `codex mcp add adwave --url https://waverunner.adwave.com/api/mcp`, then
-`codex mcp login adwave`.
+`codex mcp login adwave`. Or install the plugin:
+`codex plugin marketplace add AdwaveInc/adwave-agent-plugin`.
 
-**Cursor.** Install **Adwave** from the marketplace, or
-[add the server in one click](https://cursor.com/en/install-mcp?name=adwave&config=eyJ1cmwiOiJodHRwczovL3dhdmVydW5uZXIuYWR3YXZlLmNvbS9hcGkvbWNwIn0%3D).
+**Cursor.** [Add the server in one click](https://cursor.com/en/install-mcp?name=adwave&config=eyJ1cmwiOiJodHRwczovL3dhdmVydW5uZXIuYWR3YXZlLmNvbS9hcGkvbWNwIn0%3D).
 
 **VS Code and GitHub Copilot.**
 `code --add-mcp '{"name":"adwave","type":"http","url":"https://waverunner.adwave.com/api/mcp"}'`
@@ -96,6 +98,7 @@ Settings, For developers, Connected apps.
 | File | Used by |
 | --- | --- |
 | `plugin.json`, `mcp.json` | Agent Plugins 1.0: ChatGPT and Codex, Cursor, VS Code, Copilot CLI, Kiro |
+| `.agents/plugins/marketplace.json` | Codex and ChatGPT workspace install from this repo |
 | `.claude-plugin/`, `.mcp.json` | Claude Code plugin and marketplace, Claude plugin directory |
 | `.cursor-plugin/` | Cursor Marketplace and Grok Bot |
 | `gemini-extension.json` | Gemini CLI extension gallery |

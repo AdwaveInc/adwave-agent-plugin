@@ -41,7 +41,7 @@
         "privacyPolicyURL": "https://waverunner.adwave.com/privacy",
         "termsOfServiceURL": "https://waverunner.adwave.com/terms",
         "defaultPrompt": [
-          "Advertise my business from its website with a $50 a day budget",
+          "Advertise my business from its website",
           "How are my Adwave campaigns doing this week?",
           "Pause my campaigns that cost more than $40 per lead"
         ],

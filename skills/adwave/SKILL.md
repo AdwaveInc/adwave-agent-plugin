@@ -32,6 +32,8 @@ for their app:
 - Claude, ChatGPT, Cursor, VS Code, Gemini and most AI apps: add a connector
   or MCP server with the URL `https://waverunner.adwave.com/api/mcp`, then sign
   in (or create an account) in the browser window it opens. No key needed.
+  ChatGPT lets custom servers launch and change campaigns only on Business and
+  Enterprise workspaces; other plans may only read the account.
 - Claude Code: `claude mcp add --transport http adwave https://waverunner.adwave.com/api/mcp`
 - Codex: `codex mcp add adwave --url https://waverunner.adwave.com/api/mcp`
 - Apps that only take a header: create a key in Adwave (account menu, API &
