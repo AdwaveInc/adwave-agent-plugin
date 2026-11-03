@@ -1,8 +1,9 @@
 name: Publish to the MCP Registry
 
-# Publishes server.json as io.github.AdwaveInc/adwave. GitHub OIDC proves the
-# namespace, so no key or person is needed. Bump "version" in every manifest
-# (scripts/validate.mjs checks they agree) before cutting a release.
+# Publishes server.json as com.adwave/adwave. A DNS TXT record on adwave.com
+# proves the namespace; MCP_REGISTRY_DNS_KEY is the private half of its key.
+# Bump "version" in every manifest (scripts/validate.mjs checks they agree)
+# before cutting a release.
 on:
   release:
     types: [published]
@@ -10,7 +11,6 @@ on:
 
 permissions:
   contents: read
-  id-token: write
 
 jobs:
   publish:
@@ -24,5 +24,7 @@ jobs:
       - name: Install mcp-publisher
         run: curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/download/v1.8.6/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
       - run: ./mcp-publisher validate server.json
-      - run: ./mcp-publisher login github-oidc
+      - run: ./mcp-publisher login dns --domain adwave.com --private-key "$MCP_REGISTRY_DNS_KEY"
+        env:
+          MCP_REGISTRY_DNS_KEY: ${{ secrets.MCP_REGISTRY_DNS_KEY }}
       - run: ./mcp-publisher publish
