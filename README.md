@@ -103,7 +103,7 @@ Settings, For developers, Connected apps.
 | `.cursor-plugin/` | Cursor Marketplace and Grok Bot |
 | `gemini-extension.json` | Gemini CLI extension gallery |
 | `skills/adwave/SKILL.md` | Every agent that reads Agent Skills (Claude, Codex, Cursor, Copilot, Gemini, OpenClaw, Hermes and more) |
-| `server.json` | Official MCP Registry (`io.github.AdwaveInc/adwave`) |
+| `server.json` | Official MCP Registry (`com.adwave/adwave`) |
 
 Check every manifest with `node scripts/validate.mjs`.
 
