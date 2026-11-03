@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "adwave": {
+      "url": "https://waverunner.adwave.com/api/mcp",
+      "auth": {
+        "CLIENT_ID": "cursor-mcp",
+        "scopes": [
+          "mcp"
+        ]
+      }
+    }
+  }
+}

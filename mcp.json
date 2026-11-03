@@ -1,10 +1,9 @@
 {
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/mcp.schema.json",
   "mcpServers": {
-    "waverunner": {
-      "url": "https://waverunner.adwave.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer ${WAVERUNNER_API_KEY}"
-      }
+    "adwave": {
+      "type": "streamable-http",
+      "url": "https://waverunner.adwave.com/api/mcp"
     }
   }
 }

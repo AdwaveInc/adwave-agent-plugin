@@ -1,0 +1,30 @@
+{
+  "name": "adwave",
+  "version": "1.1.0",
+  "description": "Make ads from a website and run them on streaming TV, Meta, Google Search, YouTube and Reddit from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
+  "author": {
+    "name": "Adwave",
+    "email": "support@adwave.com",
+    "url": "https://adwave.com"
+  },
+  "homepage": "https://waverunner.adwave.com/docs/mcp",
+  "repository": "https://github.com/AdwaveInc/adwave-agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "advertising",
+    "ads",
+    "marketing",
+    "ad-campaigns",
+    "facebook-ads",
+    "google-ads",
+    "reddit-ads",
+    "ctv",
+    "small-business",
+    "mcp",
+    "adwave"
+  ],
+  "privacyPolicyUrl": "https://waverunner.adwave.com/privacy",
+  "termsOfServiceUrl": "https://waverunner.adwave.com/terms",
+  "supportUrl": "https://adwave.com/contact/",
+  "documentationUrl": "https://waverunner.adwave.com/docs/mcp"
+}

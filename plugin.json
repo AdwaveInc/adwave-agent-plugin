@@ -1,0 +1,54 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "adwave",
+  "version": "1.1.0",
+  "description": "Make ads from a website and run them on streaming TV, Meta, Google Search, YouTube and Reddit from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
+  "author": {
+    "name": "Adwave",
+    "email": "support@adwave.com",
+    "url": "https://adwave.com"
+  },
+  "homepage": "https://waverunner.adwave.com/docs/mcp",
+  "repository": "https://github.com/AdwaveInc/adwave-agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "advertising",
+    "ads",
+    "marketing",
+    "ad-campaigns",
+    "facebook-ads",
+    "google-ads",
+    "reddit-ads",
+    "ctv",
+    "small-business",
+    "mcp",
+    "adwave"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Adwave",
+        "shortDescription": "Run ads across channels",
+        "longDescription": "Adwave turns a business website into a running ad campaign. It builds the business profile and buyer profiles, makes the ads, and buys media on streaming TV, Meta (Facebook and Instagram), Google Search, YouTube, Reddit and the open web from one prepaid daily budget, then reports spend, visits, conversions and return on ad spend. Use it to launch a campaign, change budgets and channels, pause or resume ads, check results, and install conversion tracking. Campaigns run in the US and Canada. Sign in with your Adwave account; every call that spends from your wallet asks you first.",
+        "developerName": "Adwave Digital Inc",
+        "category": "Business & Operations",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://adwave.com",
+        "supportURL": "https://adwave.com/contact/",
+        "privacyPolicyURL": "https://waverunner.adwave.com/privacy",
+        "termsOfServiceURL": "https://waverunner.adwave.com/terms",
+        "defaultPrompt": [
+          "Advertise my business from its website",
+          "How are my Adwave campaigns doing this week?",
+          "Pause my campaigns that cost more than $40 per lead"
+        ],
+        "brandColor": "#7CC36E",
+        "composerIcon": "./assets/icon-64.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

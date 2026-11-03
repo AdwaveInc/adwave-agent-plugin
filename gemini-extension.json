@@ -1,0 +1,10 @@
+{
+  "name": "adwave",
+  "version": "1.1.0",
+  "description": "Make ads from a website and run them on streaming TV, Meta, Google Search, YouTube and Reddit from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
+  "mcpServers": {
+    "adwave": {
+      "httpUrl": "https://waverunner.adwave.com/api/mcp"
+    }
+  }
+}

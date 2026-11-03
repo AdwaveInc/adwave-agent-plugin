@@ -1,57 +1,117 @@
-# Waverunner for Cursor
+# Adwave for AI assistants
 
-Cursor Marketplace plugin for the [Waverunner](https://waverunner.adwave.com) MCP server. Agents can run self-serve multichannel ads: add businesses, create and launch campaigns, and read performance.
+Run paid advertising for a business from the AI assistant you already use. Adwave
+makes the ads from the business's website and runs them on streaming TV, Meta
+(Facebook and Instagram), Google Search, YouTube, Reddit and the open web from one
+prepaid daily budget, then reports spend, visits, conversions and return on ad
+spend. Campaigns run in the US and Canada.
 
-This is a single Cursor Plugin (`.cursor-plugin/plugin.json` at the repo root). Submit this repository URL at [cursor.com/marketplace/publish](https://cursor.com/marketplace/publish) — no extra packaging.
-
-## Install
-
-1. Install **Waverunner** from the Cursor Marketplace, or add this GitHub repository as a plugin.
-2. Create an API key in Waverunner: **Settings → API keys**. Copy it once (keys look like `wr_…`).
-3. In Cursor, open **Plugins → Configure** on Waverunner and paste the key into `WAVERUNNER_API_KEY`.
-
-Keys are scoped to the organization that was active when you created them. Switch workspaces in the Waverunner sidebar first if you need a key for another organization.
-
-Never commit a real key. The plugin only declares the variable name; Cursor substitutes `${WAVERUNNER_API_KEY}` at runtime.
-
-## What it connects to
+This repository is the Adwave plugin for Claude, Claude Code, ChatGPT and Codex,
+Cursor, Grok, VS Code and GitHub Copilot, Gemini, Kiro, OpenClaw and Hermes. It
+bundles the remote Adwave MCP server and one skill that teaches the assistant when
+and how to use it.
 
 | | |
 | --- | --- |
-| MCP URL | `https://waverunner.adwave.com/api/mcp` |
-| Transport | Public HTTPS (Streamable HTTP) |
-| Auth | Bearer API key |
+| MCP server | `https://waverunner.adwave.com/api/mcp` (Streamable HTTP) |
+| Sign-in | OAuth 2.1 with PKCE. No key to paste. New accounts can sign up in the same window |
+| Header-only clients | `Authorization: Bearer <API key>` from Adwave, account menu, API & agents |
+| Agent signup without a browser | `https://waverunner.adwave.com/api/mcp/signup` (`signup_start`, `signup_poll`) |
+| Docs | https://waverunner.adwave.com/docs/mcp |
 
-Grok Bot can only use public HTTPS MCP. This plugin uses that remote URL — no localhost and no stdio-only server.
+## Install
 
-```json
-{
-  "mcpServers": {
-    "waverunner": {
-      "url": "https://waverunner.adwave.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer ${WAVERUNNER_API_KEY}"
-      }
-    }
-  }
-}
-```
+**Claude (web, desktop, mobile).** Settings, Connectors, Add custom connector, URL
+`https://waverunner.adwave.com/api/mcp`. Or open
+[this prefilled link](https://claude.ai/customize/connectors?modal=add-custom-connector&connectorName=Adwave&connectorUrl=https%3A%2F%2Fwaverunner.adwave.com%2Fapi%2Fmcp).
 
-## Spend safety
-
-The bundled skill tells agents to confirm with you before `launch_campaign`, `resume_campaign`, `end_campaign`, `generate_creatives`, `launch_catalog_video_run`, or anything else that charges the prepaid wallet (including metered ad generation inside `create_campaign`). Anyone holding the `wr_` key can spend. Launching charges the first day's budget; resuming re-charges the current day; `generate_creatives` and catalog video launch also charge the wallet.
-
-## Docs
-
-- Product: [waverunner.adwave.com](https://waverunner.adwave.com)
-- MCP tools and client setup: [waverunner.adwave.com/docs/mcp](https://waverunner.adwave.com/docs/mcp)
-
-## Validate locally
+**Claude Code.**
 
 ```bash
-node scripts/validate-plugin.mjs
+/plugin marketplace add AdwaveInc/adwave-agent-plugin
+/plugin install adwave@adwave
 ```
 
-## License
+Or just the server: `claude mcp add --transport http adwave https://waverunner.adwave.com/api/mcp`
 
-MIT © Adwave
+**ChatGPT.** Settings, Apps (or Plugins), Add custom MCP server, URL
+`https://waverunner.adwave.com/api/mcp`, authentication OAuth. ChatGPT lets
+custom servers launch and change campaigns on Business and Enterprise workspaces.
+On other plans it may only read your account.
+
+**Codex.** `codex mcp add adwave --url https://waverunner.adwave.com/api/mcp`, then
+`codex mcp login adwave`. Or install the plugin:
+`codex plugin marketplace add AdwaveInc/adwave-agent-plugin`.
+
+**Cursor.** [Add the server in one click](https://cursor.com/en/install-mcp?name=adwave&config=eyJ1cmwiOiJodHRwczovL3dhdmVydW5uZXIuYWR3YXZlLmNvbS9hcGkvbWNwIn0%3D).
+
+**VS Code and GitHub Copilot.**
+`code --add-mcp '{"name":"adwave","type":"http","url":"https://waverunner.adwave.com/api/mcp"}'`
+
+**Grok.** grok.com, Connectors, New connector, Custom, URL
+`https://waverunner.adwave.com/api/mcp`. Grok CLI:
+`grok mcp add --transport http adwave https://waverunner.adwave.com/api/mcp`
+
+**Gemini CLI.** `gemini extensions install https://github.com/AdwaveInc/adwave-agent-plugin`
+
+**Hermes Agent.** Add to `~/.hermes/config.yaml`, then restart the session and
+approve the sign-in window:
+
+```yaml
+mcp_servers:
+  adwave:
+    url: https://waverunner.adwave.com/api/mcp
+    auth: oauth
+```
+
+**OpenClaw.** Add to `openclaw.json`:
+
+```json
+{ "mcp": { "servers": { "adwave": { "url": "https://waverunner.adwave.com/api/mcp", "transport": "streamable-http" } } } }
+```
+
+then `openclaw mcp login adwave`.
+
+**Anything else.** Point any MCP client that supports Streamable HTTP at
+`https://waverunner.adwave.com/api/mcp`. If it cannot do OAuth, send an API key as
+`Authorization: Bearer <key>`.
+
+## What you can ask
+
+- "Advertise my bakery from its website with $40 a day around Austin."
+- "How did my Adwave campaigns do last week? Which channel had the best cost per lead?"
+- "Move $20 a day from the brand campaign to the spring sale."
+- "Pause everything until Monday."
+- "Install conversion tracking on my Shopify store."
+
+## Money and safety
+
+Adwave spends from a prepaid wallet you fund. The skill tells the assistant to get
+your yes before every call that spends, to show amounts first, and never to ask for
+card details (top-ups happen on Stripe's page). Read-only tools are marked read-only,
+so assistants can run them without asking; launch, resume, end and budget tools are
+marked as changing your account. Disconnect an assistant any time in Adwave,
+Settings, For developers, Connected apps.
+
+## Repository layout
+
+| File | Used by |
+| --- | --- |
+| `plugin.json`, `mcp.json` | Agent Plugins 1.0: ChatGPT and Codex, Cursor, VS Code, Copilot CLI, Kiro |
+| `.agents/plugins/marketplace.json` | Codex and ChatGPT workspace install from this repo |
+| `.claude-plugin/`, `.mcp.json` | Claude Code plugin and marketplace, Claude plugin directory |
+| `.cursor-plugin/` | Cursor Marketplace and Grok Bot |
+| `gemini-extension.json` | Gemini CLI extension gallery |
+| `skills/adwave/SKILL.md` | Every agent that reads Agent Skills (Claude, Codex, Cursor, Copilot, Gemini, OpenClaw, Hermes and more) |
+| `server.json` | Official MCP Registry (`com.adwave/adwave`) |
+
+Check every manifest with `node scripts/validate.mjs`.
+
+## Support and policies
+
+- Help: https://adwave.com/help/mcp/ and support@adwave.com
+- Privacy: https://waverunner.adwave.com/privacy
+- Terms: https://waverunner.adwave.com/terms
+- Security reports: security@adwave.com
+
+MIT licensed. © Adwave Digital Inc

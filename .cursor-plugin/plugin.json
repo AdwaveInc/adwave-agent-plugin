@@ -1,36 +1,28 @@
 {
-  "name": "waverunner",
-  "displayName": "Waverunner",
-  "version": "1.0.0",
-  "description": "Self-serve multichannel ads in Cursor via the Waverunner MCP. Add businesses, create campaigns, and read performance. Confirm with the user before any wallet spend.",
+  "name": "adwave",
+  "version": "1.1.0",
+  "description": "Make ads from a website and run them on streaming TV, Meta, Google Search, YouTube and Reddit from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
   "author": {
-    "name": "Adwave"
+    "name": "Adwave",
+    "email": "support@adwave.com"
   },
-  "homepage": "https://waverunner.adwave.com",
-  "repository": "https://github.com/AdwaveInc/waverunner-cursor-plugin",
+  "homepage": "https://waverunner.adwave.com/docs/mcp",
+  "repository": "https://github.com/AdwaveInc/adwave-agent-plugin",
   "license": "MIT",
   "keywords": [
-    "waverunner",
-    "adwave",
     "advertising",
     "ads",
+    "marketing",
+    "ad-campaigns",
+    "facebook-ads",
+    "google-ads",
+    "reddit-ads",
+    "ctv",
+    "small-business",
     "mcp",
-    "campaigns",
-    "multichannel"
+    "adwave"
   ],
   "logo": "assets/logo.png",
   "skills": "./skills/",
-  "mcpServers": "./mcp.json",
-  "variables": {
-    "type": "object",
-    "properties": {
-      "WAVERUNNER_API_KEY": {
-        "type": "string",
-        "title": "Waverunner API key",
-        "description": "Bearer API key from Waverunner Settings → API keys. Keys look like wr_… . Paste the key in Plugins → Configure; never commit it.",
-        "minLength": 1
-      }
-    },
-    "required": ["WAVERUNNER_API_KEY"]
-  }
+  "mcpServers": "./.cursor-plugin/mcp.json"
 }

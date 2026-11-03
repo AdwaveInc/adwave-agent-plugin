@@ -1,0 +1,40 @@
+{
+  "name": "adwave",
+  "owner": {
+    "name": "Adwave",
+    "email": "support@adwave.com"
+  },
+  "metadata": {
+    "description": "Adwave plugins for Claude Code: run and manage ad campaigns from your terminal.",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "adwave",
+      "source": "./",
+      "description": "Make ads from a website and run them on streaming TV, Meta, Google Search, YouTube and Reddit from one prepaid daily budget. Launch, manage and report on campaigns from your AI assistant.",
+      "version": "1.1.0",
+      "author": {
+        "name": "Adwave",
+        "email": "support@adwave.com"
+      },
+      "homepage": "https://waverunner.adwave.com/docs/mcp",
+      "repository": "https://github.com/AdwaveInc/adwave-agent-plugin",
+      "license": "MIT",
+      "keywords": [
+        "advertising",
+        "ads",
+        "marketing",
+        "ad-campaigns",
+        "facebook-ads",
+        "google-ads",
+        "reddit-ads",
+        "ctv",
+        "small-business",
+        "mcp",
+        "adwave"
+      ],
+      "category": "marketing"
+    }
+  ]
+}
